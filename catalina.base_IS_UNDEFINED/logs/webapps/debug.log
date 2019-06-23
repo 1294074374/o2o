@@ -1,0 +1,9 @@
+2019-06-22 10:59:59:332 [main] DEBUG c.i.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id = null WHERE product_category_id = ? 
+2019-06-22 10:59:59:488 [main] DEBUG c.i.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 2(Long)
+2019-06-22 10:59:59:810 [main] DEBUG c.i.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 7
+2019-06-22 19:39:08:92 [main] DEBUG com.imooc.o2o.dao.HeadLineDao.queryHeadLine - ==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time FROM tb_head_line ORDER BY priority DESC 
+2019-06-22 19:39:08:159 [main] DEBUG com.imooc.o2o.dao.HeadLineDao.queryHeadLine - ==> Parameters: 
+2019-06-22 19:39:08:223 [main] DEBUG com.imooc.o2o.dao.HeadLineDao.queryHeadLine - <==      Total: 2
+2019-06-22 19:46:31:128 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is null ORDER BY priority DESC 
+2019-06-22 19:46:31:180 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-06-22 19:46:31:238 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
