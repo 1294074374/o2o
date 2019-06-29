@@ -9,7 +9,7 @@ public class ShopCategory {
 	// 名称
 	private String shopCategoryName;
 	// 描述
-	private String shipCategoryDesc;
+	private String shopCategoryDesc;
 	// 图片
 	private String shopCategoryImg;
 	// 优先级
@@ -20,6 +20,14 @@ public class ShopCategory {
 	private Date lastEditTime;
 	// 商家
 	private ShopCategory parent;
+
+	public String getShopCategoryDesc() {
+		return shopCategoryDesc;
+	}
+
+	public void setShopCategoryDesc(String shopCategoryDesc) {
+		this.shopCategoryDesc = shopCategoryDesc;
+	}
 
 	public Long getShopCategoryId() {
 		return shopCategoryId;
@@ -35,14 +43,6 @@ public class ShopCategory {
 
 	public void setShopCategoryName(String shopCategoryName) {
 		this.shopCategoryName = shopCategoryName;
-	}
-
-	public String getShipCategoryDesc() {
-		return shipCategoryDesc;
-	}
-
-	public void setShipCategoryDesc(String shipCategoryDesc) {
-		this.shipCategoryDesc = shipCategoryDesc;
 	}
 
 	public String getShopCategoryImg() {

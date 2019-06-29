@@ -13,7 +13,7 @@ public class PathUtil {
 		if (os.toLowerCase().startsWith("win")) {
 			basePath = "D:/projectdev/image";
 		} else {
-			basePath = "/home/junlin/image";
+			basePath = "/Users/baidu/work/image";
 		}
 		basePath = basePath.replace("/", seperator);
 		// 返回路径
@@ -25,4 +25,7 @@ public class PathUtil {
 		String imagePath = "/upload/item/shop/" + shopId + "/";
 		return imagePath.replace("/", seperator);
 	}
+	
+
+	
 }

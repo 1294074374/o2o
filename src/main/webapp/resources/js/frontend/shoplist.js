@@ -23,39 +23,35 @@ $(function() {
 	function getSearchDivData() {
 		// 如果传入了parentId,则去除此一级类别下面的所有二级类别
 		var url = searchDivUrl + '?' + 'parentId=' + parentId;
-		$
-				.getJSON(
-						url,
-						function(data) {
-							if (data.success) {
-								// 获取后台返回过来的店铺类别列表
-								var shopCategoryList = data.shopCategoryList;
-								var html = '';
-								html += '<a href="#" class="button" data-category-id=""> 全部类别  </a>';
-								// 遍历店铺类别列表，拼接出a标签集
-								shopCategoryList
-										.map(function(item, index) {
-											html += '<a href="#" class="button" data-category-id='
-													+ item.shopCategoryId
-													+ '>'
-													+ item.shopCategoryName
-													+ '</a>';
-										});
-								// 将拼接好的类别标签嵌入前台的html组件中
-								$('#shoplist-search-div').html(html);
-								var selectOptions = '<option value="">全部街道</option>';
-								// 从后台返回过来的区域信息列表
-								var areaList = data.areaList;
-								// 遍历区域信息列表，拼接出option标签集
-								areaList.map(function(item, index) {
-									selectOptions += '<option value="'
-											+ item.areaId + '">'
-											+ item.areaName + '</option>';
-								});
-								// 将标签集添加进area列表中
-								$('#area-search').html(selectOptions);
-							}
-						});
+		$.getJSON(url,function(data) {
+			if (data.success) {
+				// 获取后台返回过来的店铺类别列表
+				var shopCategoryList = data.shopCategoryList;
+				var html = '';
+				html += '<a href="#" class="button" data-category-id=""> 全部类别  </a>';
+				// 遍历店铺类别列表，拼接出a标签集
+				shopCategoryList.map(function(item, index) {
+					html += '<a href="#" class="button" data-category-id='
+							+ item.shopCategoryId
+							+ '>'
+							+ item.shopCategoryName
+							+ '</a>';
+				});
+				// 将拼接好的类别标签嵌入前台的html组件中
+				$('#shoplist-search-div').html(html);
+				var selectOptions = '<option value="">全部街道</option>';
+				// 从后台返回过来的区域信息列表
+				var areaList = data.areaList;
+				// 遍历区域信息列表，拼接出option标签集
+				areaList.map(function(item, index) {
+					selectOptions += '<option value="'
+									+ item.areaId + '">'
+									+ item.areaName + '</option>';
+				});
+				// 将标签集添加进area列表中
+				$('#area-search').html(selectOptions);
+			}
+		});
 	}
 	// 渲染出店铺类别列表以及区域列表以供搜索
 	getSearchDivData();
@@ -79,22 +75,27 @@ $(function() {
 				var html = '';
 				// 遍历店铺列表，拼接出卡片集合
 				data.shopList.map(function(item, index) {
-					html += '' + '<div class="card" data-shop-id="'
-							+ item.shopId + '">' + '<div class="card-header">'
-							+ item.shopName + '</div>'
-							+ '<div class="card-content">'
-							+ '<div class="list-block media-list">' + '<ul>'
-							+ '<li class="item-content">'
-							+ '<div class="item-media">' + '<img src="'
-							+ item.shopImg + '" width="44">' + '</div>'
-							+ '<div class="item-inner">'
-							+ '<div class="item-subtitle">' + item.shopDesc
-							+ '</div>' + '</div>' + '</li>' + '</ul>'
-							+ '</div>' + '</div>' + '<div class="card-footer">'
-							+ '<p class="color-gray">'
-							+ new Date(item.lastEditTime).Format("yyyy-MM-dd")
-							+ '更新</p>' + '<span>点击查看</span>' + '</div>'
-							+ '</div>';
+					html += ''  + '<div class="card" data-shop-id="'+ item.shopId + '">' 
+								+ 	'<div class="card-header">' + item.shopName + '</div>'
+							    + 	'<div class="card-content">'
+							    +	 	'<div class="list-block media-list">' 
+							    + 			'<ul>'
+							    + 				'<li class="item-content">'
+							    + 					'<div class="item-media">' 
+							    + 						'<img src="' + item.shopImg + '" width="44">' 
+							    + 					'</div>'
+							    + 					'<div class="item-inner">'
+							    + 						'<div class="item-subtitle">' + item.shopDesc + '</div>' 
+							    + 					'</div>' 
+							    + 				'</li>' 
+							    + 			'</ul>'
+							    + 	 	'</div>' 
+							    + 	'</div>' 
+							    + 	'<div class="card-footer">'
+							    + 		'<p class="color-gray">'+ new Date(item.lastEditTime).Format("yyyy-MM-dd")
+							    +		 '更新</p>' + '<span>点击查看</span>' 
+							    + 	'</div>'
+							    + '</div>';
 				});
 				// 讲card集合添加到目标HTML组件中
 				$('.list-div').append(html);
