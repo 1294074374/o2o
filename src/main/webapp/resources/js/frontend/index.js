@@ -1,6 +1,6 @@
 $(function() {
 	//定义访问后台，获取头条列表以及一级类别列表的URL
-    var url = 'listmainpageinfo';
+    var url = '/o2o/frontend/listmainpageinfo';
     //访问后台，获取头条列表以及一级类别列表
     $.getJSON(url, function (data) {
         if (data.success) {
@@ -18,7 +18,7 @@ $(function() {
             $('.swiper-wrapper').html(swiperHtml);
             $(".swiper-container").swiper({
                 //设置轮播图轮换时间为3秒
-                autoplay: 1000,
+                autoplay: 3000,
                 //用户对轮播图进行操作时，是否自动停止
                 autoplayDisableOnInteraction: true
             });

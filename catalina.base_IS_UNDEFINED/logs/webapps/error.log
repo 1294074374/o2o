@@ -1,0 +1,7 @@
+2019-07-18 23:25:00:733 [main] ERROR com.imooc.o2o.service.impl.WechatAuthServiceImpl - insertPersonInfo error:org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'user_type' cannot be null
+### The error may involve com.imooc.o2o.dao.PersonInfoDao.insertPersonInfo-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO   tb_person_info(name,profile_img,email,gender,enable_status,user_type,create_time,last_edit_time)   VALUES   (?,?,?,?,?,?,?,?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'user_type' cannot be null
+; SQL []; Column 'user_type' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'user_type' cannot be null
