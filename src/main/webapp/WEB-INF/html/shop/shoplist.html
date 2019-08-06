@@ -19,6 +19,9 @@
 <link rel="stylesheet"
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
 <link rel="stylesheet" href="../resources/css/shop/shoplist.css">
+<style type="text/css">
+.divcss5-left{float:right} 
+</style>
 <script>
 	var _hmt = _hmt || [];
 	(function() {
@@ -43,7 +46,7 @@
 			<div class="content">
 				<div class="content-block">
 					<p>
-						你好,<span id="user-name"></span><a class="pull-rigth"
+						你好,<span id="user-name"></span><a class="pull-rigth" class="divcss5-left"
 							href="shopoperation" >增加店铺</a>
 							
 					</p>
@@ -56,13 +59,18 @@
 				</div>
 				<div class="content-block">
 					<div class="row">
-						<div class="col-50">
-							<a href="" id="log-out"
+						<div class="col-33">
+							<a href="/o2o/local/accountbind?usertype=2"
+								class="button button-big button-fill button-success">绑定账号</a>
+						</div>
+						<div class="col-33">
+							<a href="" id="log-out" usertype=2
 								class="button button-big button-fill button-danger">退出系统</a>
 						</div>
-						<div class="col-50">
-							<a href="/o2o/shop/changepsw"
-								class="button button-big button-fill button-success">修改密码</a>
+						<div class="col-33">
+							<a href="/o2o/local/changepsw?usertype=2"
+								class="button button-big button-fill button-success"
+								id="bindOrChange">修改密码</a>
 						</div>
 					</div>
 				</div>
@@ -78,6 +86,8 @@
 	<script type='text/javascript'
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript' src='../resources/js/shop/shoplist.js'
+		charset='utf-8'></script>
+	<script type='text/javascript' src='../resources/js/local/logout.js'
 		charset='utf-8'></script>
 </body>
 </html>

@@ -1,14 +1,9 @@
-2019-07-18 23:06:32:896 [main] DEBUG c.i.o2o.dao.WechatAuthDao.queryWechatAuthByOpenId - ==>  Preparing: SELECT w.wechat_auth_id, w.open_id, w.create_time, p.user_id, p.name, p.profile_img, p.email, p.gender, p.enable_status, p.user_type, p.create_time, p.last_edit_time FROM tb_wechat_auth w LEFT JOIN tb_person_info p ON w.user_id = p.user_id WHERE open_id=? 
-2019-07-18 23:06:33:262 [main] DEBUG c.i.o2o.dao.WechatAuthDao.queryWechatAuthByOpenId - ==> Parameters: ss(String)
-2019-07-18 23:06:33:348 [main] DEBUG c.i.o2o.dao.WechatAuthDao.queryWechatAuthByOpenId - <==      Total: 1
-2019-07-18 23:24:14:168 [main] DEBUG com.imooc.o2o.dao.WechatAuthDao.insertWechatAuth - ==>  Preparing: INSERT INTO tb_wechat_auth(user_id,open_id,create_time) VALUES (?,?,?) 
-2019-07-18 23:24:14:262 [main] DEBUG com.imooc.o2o.dao.WechatAuthDao.insertWechatAuth - ==> Parameters: 1(Long), 测试一下(String), 2019-07-18 23:24:14.121(Timestamp)
-2019-07-18 23:24:14:328 [main] DEBUG com.imooc.o2o.dao.WechatAuthDao.insertWechatAuth - <==    Updates: 1
-2019-07-18 23:25:00:416 [main] DEBUG com.imooc.o2o.dao.PersonInfoDao.insertPersonInfo - ==>  Preparing: INSERT INTO tb_person_info(name,profile_img,email,gender,enable_status,user_type,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?,?) 
-2019-07-18 23:25:00:479 [main] DEBUG com.imooc.o2o.dao.PersonInfoDao.insertPersonInfo - ==> Parameters: null, null, null, null, 1(Integer), null, 2019-07-18 23:25:00.364(Timestamp), null
-2019-07-18 23:27:11:360 [main] DEBUG com.imooc.o2o.dao.PersonInfoDao.insertPersonInfo - ==>  Preparing: INSERT INTO tb_person_info(name,profile_img,email,gender,enable_status,user_type,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?,?) 
-2019-07-18 23:27:11:424 [main] DEBUG com.imooc.o2o.dao.PersonInfoDao.insertPersonInfo - ==> Parameters: null, null, null, null, 1(Integer), 1(Integer), 2019-07-18 23:27:11.319(Timestamp), null
-2019-07-18 23:27:11:488 [main] DEBUG com.imooc.o2o.dao.PersonInfoDao.insertPersonInfo - <==    Updates: 1
-2019-07-18 23:27:11:505 [main] DEBUG com.imooc.o2o.dao.WechatAuthDao.insertWechatAuth - ==>  Preparing: INSERT INTO tb_wechat_auth(user_id,open_id,create_time) VALUES (?,?,?) 
-2019-07-18 23:27:11:516 [main] DEBUG com.imooc.o2o.dao.WechatAuthDao.insertWechatAuth - ==> Parameters: 3(Long), 测试一下(String), 2019-07-18 23:27:11.505(Timestamp)
-2019-07-18 23:27:11:581 [main] DEBUG com.imooc.o2o.dao.WechatAuthDao.insertWechatAuth - <==    Updates: 1
+2019-08-02 22:46:35:417 [main] DEBUG c.i.o.d.L.queryLocalAuthByUserNameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.profile_img, p.email, p.gender, p.enable_status, p.user_type, p.create_time, p.last_edit_time FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.user_id = p.user_id WHERE l.username=? AND l.password =? 
+2019-08-02 22:46:35:495 [main] DEBUG c.i.o.d.L.queryLocalAuthByUserNameAndPwd - ==> Parameters: 123(String), 123(String)
+2019-08-02 22:46:35:575 [main] DEBUG c.i.o.d.L.queryLocalAuthByUserNameAndPwd - <==      Total: 1
+2019-08-02 22:46:35:875 [main] DEBUG com.imooc.o2o.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: UPDATE tb_local_auth SET password=?, last_edit_time=? WHERE user_id=? AND username=? AND password=? 
+2019-08-02 22:46:35:880 [main] DEBUG com.imooc.o2o.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: testupdate(String), 2019-08-02 22:46:35.655(Timestamp), 1(Long), testusername(String), testpassword(String)
+2019-08-02 22:46:35:949 [main] DEBUG com.imooc.o2o.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0
+2019-08-02 22:47:09:728 [main] DEBUG c.i.o.d.L.queryLocalAuthByUserNameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.profile_img, p.email, p.gender, p.enable_status, p.user_type, p.create_time, p.last_edit_time FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.user_id = p.user_id WHERE l.username=? AND l.password =? 
+2019-08-02 22:47:09:774 [main] DEBUG c.i.o.d.L.queryLocalAuthByUserNameAndPwd - ==> Parameters: 123(String), 123(String)
+2019-08-02 22:47:09:830 [main] DEBUG c.i.o.d.L.queryLocalAuthByUserNameAndPwd - <==      Total: 1

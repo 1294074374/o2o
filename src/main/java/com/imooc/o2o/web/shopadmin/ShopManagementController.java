@@ -71,10 +71,8 @@ public class ShopManagementController {
 	@ResponseBody
 	private Map<String, Object> getShopList(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
-		PersonInfo user = new PersonInfo();
-		user.setUserId(1L);
-		request.getSession().setAttribute("user", user);
-		user = (PersonInfo) request.getSession().getAttribute("user");
+
+		PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
 		try {
 			Shop shopCondition = new Shop();
 			shopCondition.setOwner(user);
@@ -122,7 +120,7 @@ public class ShopManagementController {
 		// 判断数据的合法性
 		if (shop != null && shop.getShopId() != null) {
 			ShopExecution se;
-			ImageHolder thumbnail = new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream());
+			ImageHolder thumbnail = new ImageHolder(shopImg.getOriginalFilename(), shopImg.getInputStream());
 			try {
 				if (shopImg == null) {
 					se = shopService.modifyShop(shop, null);
@@ -138,7 +136,7 @@ public class ShopManagementController {
 			} catch (ShopOperationException e) {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", e.getMessage());
-			} 
+			}
 //			catch (IOException e) {
 //				modelMap.put("success", false);
 //				modelMap.put("errMsg", e.getMessage());
@@ -236,7 +234,7 @@ public class ShopManagementController {
 			owner.setUserId(1L);
 			shop.setOwner(owner);
 			ShopExecution se;
-			ImageHolder thumbnail = new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream());
+			ImageHolder thumbnail = new ImageHolder(shopImg.getOriginalFilename(), shopImg.getInputStream());
 			try {
 				se = shopService.addShop(shop, thumbnail);
 				if (se.getState() == ShopStateEnum.CHECK.getState()) {
@@ -258,11 +256,7 @@ public class ShopManagementController {
 			} catch (ShopOperationException e) {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", e.getMessage());
-			} 
-//			catch (IOException e) {
-//				modelMap.put("success", false);
-//				modelMap.put("errMsg", e.getMessage());
-//			}
+			}
 
 		} else {
 			modelMap.put("success", false);
@@ -272,27 +266,4 @@ public class ShopManagementController {
 		// 3.返回结果
 		return modelMap;
 	}
-
-//	private static void inputStreamToFile(InputStream ins, File file) {
-//		FileOutputStream os = null;
-//		try {
-//			os = new FileOutputStream(file);
-//			int bytesRead = 0;
-//			byte[] buffer = new byte[1024];
-//			while ((bytesRead = ins.read(buffer)) != -1) {
-//				os.write(buffer, 0, bytesRead);
-//			}
-//		} catch (Exception e) {
-//			throw new RuntimeException("调用inputStreamToFile产生异常:" + e.getMessage());
-//		} finally {
-//			try {
-//				if (os != null)
-//					os.close();
-//				if (ins != null)
-//					ins.close();
-//			} catch (IOException e) {
-//				throw new RuntimeException("inputStreamToFile关闭io产生异常:" + e.getMessage());
-//			}
-//		}
-//	}
 }
