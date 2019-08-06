@@ -153,7 +153,7 @@ public class ShopManagementController {
 
 	@RequestMapping(value = "/getshopbyid", method = RequestMethod.GET)
 	@ResponseBody
-	private Map<String, Object> getShopByInd(HttpServletRequest request) {
+	private Map<String, Object> getShopById(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		Long shopId = HttpServletRequestUtil.getLong(request, "shopId");
 		// 合法性判断
