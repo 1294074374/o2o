@@ -52,7 +52,7 @@ public class ShopAdminController {
 		return "shop/productoperation";
 	}
 	
-	@RequestMapping(value = "/productmanage")
+	@RequestMapping(value = "/productmanagement")
 	public String productManagement() {
 		// 转发到商品添加/编辑页面
 		return "shop/productmanage";
