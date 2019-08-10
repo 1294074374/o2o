@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Product {
+
 	// 商品ID
 	private Long productId;
 	// 商品名称
@@ -18,6 +19,8 @@ public class Product {
 	private String promotionPrice;
 	// 权重
 	private Integer priority;
+	// 商品积分
+	private Integer point;
 	// 创建时间
 	private Date createTime;
 	// 修改时间
@@ -31,6 +34,14 @@ public class Product {
 	private ProductCategory productCategory;
 	// 商铺
 	private Shop shop;
+
+	public Integer getPoint() {
+		return point;
+	}
+
+	public void setPoint(Integer point) {
+		this.point = point;
+	}
 
 	public Long getProductId() {
 		return productId;
